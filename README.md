@@ -1,5 +1,6 @@
 # corvinusphd
-LaTeX template for the Ph.D. dissertations of Corvinus University of Budapest, Hungary.
+LaTeX template a Budapesti Corvinus Egyetemen készülő magyar nyelvű Ph.D. dolgozatokhoz.
+A template file megfelel a doktori iskola formális elvárásainak.
 
 * A stilus file: `corvinusphd.cls` 
 * A template file: `disszertacio.tex`
@@ -13,8 +14,10 @@ Szükséges még, hogy az ábrák ennek az alkönyvtárnak az `images/` alkönyv
 Ajánlom, hogy a template file-t futtassuk először. A 'MiKTeX' vagy 'texlive' standard disztribúciókkal
 a `disszertacio.tex` template file néhány warning üzenettel, de hiba nélkül fordít.
 
-Ha ideáig eljutottunk, akkor a 'disszertacio.tex' file 3-10 soraiban definiált parancsokat kell értelmeszerűen kitölteni,
+Ha ideáig eljutottunk, akkor a `disszertacio.tex` file 3-10 soraiban definiált parancsokat kell értelemszerűen kitölteni,
 majd a `\mainmatter` parancs utáni sorban kezdhetjük is írni a dolgozatot.
 A tételszerű környezetek definíciói a preambulumban vannak, itt változtathatjuk meg, ha arra szükség lenne.
+A stílus a `memoir.cls` stílus file egy további paraméterezése. Ha bármi továbbfejleszteni valót találunk akkor az első forrás a `memoir.cls` dokumentációja.
+Ennek megfelelően a `memoir.cls` valamennyi parametere a `corvinus.cls` stilusnak is paramétere.
 
 Minden változtatási ötletet örömmel fogadok.
