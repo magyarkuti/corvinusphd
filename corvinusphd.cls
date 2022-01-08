@@ -28,6 +28,14 @@
 \setlrmarginsandblock{45mm}{25mm}{*}
 \setulmarginsandblock{30mm}{25mm}{*}
 \checkandfixthelayout
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[magyar]{babel}\frenchspacing
+
+\RequirePackage[hyphens]{url}
+\RequirePackage{graphicx, csquotes, amsmath, amssymb, amsthm, fixme, supertabular, hhline, array}
+\graphicspath{{images/}}
+\usepackage[x11names]{xcolor}
 %\RequirePackage{mathptmx,leading}
 \RequirePackage{newtxtext, newtxmath,leading}
 \leading{16.8pt}% 12+12*0.2=14.4 a normál és ez a default. Ha kétszeres kell:12+2*12*0.2=16.8. Tán ez a 1.5 sorköz?
@@ -35,13 +43,6 @@
 
 %\setlength{\evensidemargin}{\oddsidemargin} ha egyoldalasan akarjuk nyomtatni
 
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
-
-\RequirePackage[hyphens]{url}
-\RequirePackage{graphicx, amsmath, fixme, supertabular, hhline, array}
-\graphicspath{{images/}}
-\usepackage[x11names]{xcolor}
 \RequirePackage[unicode]{hyperref}\hypersetup{final}\RequirePackage{memhfixc}
 \RequirePackage[gen]{eurosym}\DeclareUnicodeCharacter{20AC}{\euro{}}
 

@@ -9,10 +9,22 @@
 \newcommand{\subtitle}{Ajánlatadási viselkedés modellezése a német naperőmű aukciókon}
 \newcommand{\submitted}{2021. Budapest}
 
-\usepackage[magyar]{babel}\frenchspacing
+\theoremstyle{plain}
+\newtheorem{proposition}{állítás}[chapter]
+\newtheorem{lemma}[proposition]{lemma}
+\newtheorem*{SL}{Steinitz-lemma}
+\newtheorem*{FA}{Az algebra alaptétele}
+\theoremstyle{remark}
+\newtheorem{note}[proposition]{megjegyzés}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{definíció}
+\newtheorem{corollary}[proposition]{következmény}
+\newtheorem{defprop}[proposition]{definíció-állítás}
+
 
 \newcommand{\fit}{\textsc{f}i\textsc{t}\index{\textsc{f}i\textsc{t}} }
 \newcommand{\fip}{\textsc{f}i\textsc{p}\index{\textsc{f}i\textsc{p}} }
+
 \makeindex
 \begin{document}
 \frontmatter*
@@ -2050,6 +2062,14 @@ Egy egyszerű logika mentén levezethető a szereplők
 optimális stratégiája -- függetlenül a többiek ajánlataitól.
 Ez a gondolatsor a következő.
 
+\begin{proposition}
+    A $2$ az egyetlen páros prím.
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy $p>2$ és prím. Ekkor $2$ nem osztója $p$-nek.
+\end{proof}
+
+
 \chapter{Eredmények}\label{results}
 
 \scwords Az egyenáras és az ajánlati áras
@@ -2625,8 +2645,6 @@ A fentieket összefoglalva tehát a következő maximalizáció végzi a modell:
     \sum_{p=1}^Pc_pq_p\\
     \rightarrow \max
 \end{multline}
-
- 
 Jelölések: piacok: $m=1,\ldots,M$; fogyasztás: $Q$; erőművi blokk: $p$;
 erőművi termelés: $q$; változó költség: $c$; export-import áramlás: $t$;
 erőművi kapacitáskorlát: $C$; kapacitáskorlát a határokon: $N$;
@@ -2634,10 +2652,63 @@ teljes jólét: $W$; Teljes fogyasztói többlet: $TCS$;
 Villamosenergia-termelés költsége: $TC$, kereslet: $D$;
 keresleti görbét meghatározó konstansok: $A$ és $B$
 
-
 \chapter{Az iteráció egyes lépéseihez tartozó ábrák és eloszlásfüggvények}\label{app:2}
+\begin{SL}\index{Steinitz-lemma}
+	Legyenek $n$ és $m$ nem negatív egészek.
+	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
+	és az
+	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
+	Ekkor
+	\begin{enumerate}
+		\item $n\leq m$ és;
+		\item a generátorrendszert alkotó $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével kapott
+		      \(
+		      \left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
+		      \)
+		      vektorrendszer is generátorrendszer.%
+		      \footnote{Úgy kell a jelöléseket érteni, hogy az $n=0$, de az $n=m$ eset is lehetséges.
+		      Az $n=0$ esetben az $y$-okkal jelölt vektorok egyike sem,
+		      míg az $n=m$ esetben az $x$-el jelölt vektorok egyike sem szerepel az
+		      \(
+		      \left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
+		      \)
+		      vektorrendszer elemei közt.}%
+		      \qedhere
+	\end{enumerate}
+	\label{le:Steinitz}
+\end{SL}
+\begin{proof}
+	Legyen $k$ a legnagyobb a $\left\{ 0,\ldots,n \right\}$ egészek közül, amelyre
+	\begin{enumerate}
+		\item $k\leq m$, és
+		\item az $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével az
+		      \[
+			      \left\{ y_1,\ldots,y_k,x_{k+1},\ldots,x_m \right\}\tag{\dag}
+		      \]
+		      vektorrendszer is generátorrendszer.
+	\end{enumerate}
+	Ilyen $k$ biztosan van, hiszen $k=0$ triviálisan jó.
+	Összesen azt kell meggondolnunk, hogy $k=n$.
+	Ha $k<n$ lenne,
+	\begin{itemize}
+		\item
+		      akkor létezne $y_{k+1}$ vektor.
+		      No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\ldots,y_k \right\}$ lineáris burkában,
+		      ami (\dag) generátorrendszer volta miatt csak úgy lehetséges,
+		      hogy $k\neq m$, azaz $k<m$, ergo $k+1\leq m$.
+		\item
+		      A generátorcsere-lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor
+		      avval az $x$-el
+		      -- a generátorrendszer tulajdonság megtartásával is --
+		      kicserélhető,
+		      amely $x$ szerepel az $y_{k+1}$ vektornak a (\dag)-beli
+		      vektorokkal képzett lineáris kombinációjában.
+	\end{itemize}
+	Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám,
+	amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
+\end{proof}
 
-\renewcommand{\indexname}{Rövidítések jegyzéke}
+\renewcommand{\indexname}{Betűrendes mutató}
 \printindex
 
 \chapter*{Utószó és köszönet}
